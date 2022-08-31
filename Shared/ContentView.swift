@@ -9,8 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            TimerView()
+                .padding()
+                .tabItem {
+                    Label("Timer", systemImage: "timer")
+                }
+                .tag("Timer")
+            TimerSettingView()
+                .padding()
+                .tabItem {
+                    Label("Setting", systemImage: "gear")
+                }
+                .tag("Setting have no code")
+        }
     }
 }
 
